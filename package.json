@@ -1,0 +1,27 @@
+{
+  "name": "Authorisation",
+  "version": "1.0.0",
+  "main": "Main.js",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "js-yaml": "^3.10.0",
+    "lodash": "^4.17.4",
+    "lurl": "^0.0.2",
+    "moment": "^2.19.1",
+    "mongodb": "^2.2.33",
+    "nats": "^0.8.4",
+    "spm-agent-nodejs": "^1.30.9",
+    "winston": "^2.4.0",
+    "winston-logsene": "^1.2.4"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^4.11.0",
+    "mocha": "^4.0.1"
+  },
+  "scripts": {
+    "start-production": "forever -c 'node --harmony' Main.js",
+    "start-dev": "node Main.js"
+  }
+}

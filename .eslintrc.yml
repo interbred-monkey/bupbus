@@ -1,0 +1,55 @@
+env:
+  es6: true
+  node: true
+extends: 'eslint:recommended'
+parserOptions:
+  ecmaVersion: 2017
+  sourceType: module
+  ecmaFeatures:
+    experimentalObjectRestSpread: true
+rules:
+  linebreak-style:
+    - error
+    - unix
+  quotes:
+    - error
+    - single
+  semi:
+    - error
+    - always
+  no-var:
+    - error
+  padded-blocks:
+    - error
+    - always
+  no-whitespace-before-property:
+    - error
+  func-call-spacing:
+    - error
+    - never
+  function-paren-newline:
+    - error
+    - consistent
+  func-style:
+    - error
+    - declaration
+    - allowArrowFunctions: true
+  prefer-arrow-callback:
+    - error
+  no-console:
+    - error
+    - allow:
+        - trace
+  indent:
+    - error
+    - 2
+    - SwitchCase: 1
+      VariableDeclarator:
+        var: 2
+        let: 2
+        const: 3
+      MemberExpression: 0
+      FunctionExpression:
+        parameters: first
+      ArrayExpression: first
+      ObjectExpression: first

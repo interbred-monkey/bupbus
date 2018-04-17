@@ -1,0 +1,9 @@
+getOriginConsent:
+  method: GET
+  subject: :origin.consent
+  controller: ConsentController
+  handler: getOriginConsent
+  parameters:
+    origin:
+      type: String
+      required: true
