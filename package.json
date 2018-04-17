@@ -1,5 +1,5 @@
 {
-  "name": "Authorisation",
+  "name": "BupBus",
   "version": "1.0.0",
   "main": "Main.js",
   "license": "MIT",
@@ -10,10 +10,7 @@
     "lurl": "^0.0.2",
     "moment": "^2.19.1",
     "mongodb": "^2.2.33",
-    "nats": "^0.8.4",
-    "spm-agent-nodejs": "^1.30.9",
-    "winston": "^2.4.0",
-    "winston-logsene": "^1.2.4"
+    "nats": "^0.8.4"
   },
   "devDependencies": {
     "chai": "^4.1.2",
