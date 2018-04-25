@@ -8,6 +8,8 @@ parserOptions:
   ecmaFeatures:
     experimentalObjectRestSpread: true
 rules:
+  no-buffer-constructor:
+    - error
   linebreak-style:
     - error
     - unix

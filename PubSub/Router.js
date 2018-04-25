@@ -136,8 +136,6 @@ class Routes {
 
       this.Module.subscribe(route.processedSubject, {queue: this.Queue}, async (req, replyTo) => {
 
-        //console.log(req, subject);
-
         try {
 
           let Controller = require(`${this.ControllerDir}/${route.controller}`),
@@ -182,7 +180,19 @@ class Routes {
     }
 
     req.responseStatusCode = this.GenerateStatusCode(err, route.method);
-    req.responseBody = body;
+
+    try {
+
+      req.responseBody = JSON.stringify(body);
+
+    }
+
+    catch(e) {
+
+      req = this.GenerateInternalError(req);
+      __logging.error(e);
+
+    }
 
     return req;
 
@@ -202,6 +212,15 @@ class Routes {
         return (err?404:200);
 
     }
+
+  }
+
+  GenerateInternalError(req) {
+
+    req.responseStatusCode = 500;
+    req.responseBody = JSON.stringify({errors: ['An unknown error occurred. Please contact support.']});
+
+    return req;
 
   }
 

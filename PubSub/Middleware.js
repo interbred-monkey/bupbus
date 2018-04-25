@@ -197,7 +197,10 @@ class Middleware {
 
     }
 
-    let requestSubjectBits = route.requestSubject.split('.');
+    let queue = (process.env.PUBSUB_MESSAGE_QUEUE?`.${process.env.PUBSUB_MESSAGE_QUEUE}`:''),
+        regex = new RegExp(`^${route.method.toLowerCase()}${queue}.`, 'g');
+
+    let requestSubjectBits = route.requestSubject.replace(regex, '').split('.');
 
     route.subject.split('.').map( (bit, index) => {
 
